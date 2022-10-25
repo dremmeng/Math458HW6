@@ -1,0 +1,91 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr, lastpage}
+\usepackage{tikz}
+\usepackage{amsmath,amssymb,amsthm}
+\usetikzlibrary{calc}
+\usepackage{enumitem}
+\usepackage{soul}
+
+% Universes
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+% Groups commands
+\newcommand{\inv}{^{-1}}
+\newcommand{\lcm}{\mathrm{lcm}}
+\newcommand{\lr}[1]{\langle #1 \rangle}
+\newcommand{\Inn}{\mathrm{Inn}}
+\newcommand{\iso}{\cong}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0cm}
+\pagestyle{fancy}
+\lhead{MATH458 Abstract Algebra}
+\rhead{Homework 6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\section*{Homework 6}
+
+
+\begin{enumerate}
+
+\item Find a subgroup of $\ZZ_{20} \oplus U(16)$ that is isomorphic to $\ZZ_4\oplus\ZZ_5$. Provide the isomorphism (but you do not need to prove your map works).
+
+    
+\item Consider the group $\ZZ_{90}\oplus\ZZ_{36}$.
+    \begin{enumerate}
+        \item Without computing all of them, determine how many elements of order 15 are there in $\ZZ_{90}\oplus\ZZ_{36}$? (Hint: Use Theorem 2.29 from the Module 2 Notes.)
+        
+        
+        \item Determine the number of cyclic groups of order 15 in $\ZZ_{90}\oplus\ZZ_{36}$. {\color{red}\st{Provide a generator for each of the subgroups.}}
+
+    \end{enumerate}
+    
+    
+\item In this problem, we show why the operation we defined on cosets only makes sense when the subgroup is normal. 
+    \begin{enumerate} 
+        \item Let $H$ be a subgroup of a group $G$ with the property that for all $a,b\in G$, $aHbH=abH$. Prove that $H$ must be normal.
+        
+    
+        \item Give an example of a group $G$ and subgroup $K$ such that $aKbK\ne abK$ for some $a,b\in G$. 
+        
+    \end{enumerate} 
+    
+    
+\item Let $H$ be a normal subgroup of a finite group $G$ and let $x\in G$. If $\gcd(|x|, |G/H|)=1$, show that $x\in H$.
+    
+    
+\item The following theorem and proof is presented in the textbook (Theorem~9.7 in the 9th edition).
+    
+    \bigskip
+    {\sffamily
+    \textit{Theorem. }
+    Let $G$ be group of order $p^2$ where $p$ is prime. Then $G$ is isomorphic to $\ZZ_{p^2}$ or $\ZZ_p\oplus \ZZ_p$.
+
+    \textit{Proof.}
+    Let $G$ be a group of order $p^2$, where $p$ is a prime. If $G$ has an element of order $p^2$, then $G$ is isomorphic to $\ZZ_{p^2}$.
+    \textbf{(1) So, by Corollary 2 of Lagrange’s Theorem, we may assume that every nonidentity element of $G$ has order $p$. }
+    First we show that for any element $a$, the subgroup $\langle a\rangle$ is normal in $G$. 
+    \textbf{(2) If this is not the case, then there is an element $b$ in $G$ such that $bab\inv$ is not in $\langle a\rangle$.}
+    \textbf{(3) Then $\langle a\rangle$ and $\langle bab\inv\rangle$ are distinct subgroups of order $p$.}
+    Since $\langle a\rangle\cap\langle bab\inv\rangle$ is a subgroup of both $\langle a\rangle$ and $\langle bab\inv\rangle$, we have that $\langle a\rangle\cap\langle bab\inv\rangle=\{e\}$. 
+    \textbf{(4) From this it follows that the distinct left cosets of $\langle bab\inv\rangle$ are $\langle bab\inv\rangle$, $a\langle bab\inv\rangle$, $a^2\langle bab\inv\rangle$ , \dots, $a^{p-1}\langle bab\inv\rangle$.} 
+    Since $b\inv$ must lie in one of these cosets, we may write $b\inv$ in the form $b\inv=a^i(bab\inv)^j=a^iba^jb\inv$ for some $i$ and $j$. 
+    Canceling the $b\inv$ terms, we obtain $e=a^iba^j$ and therefore $b=a^{-i-j}\in\langle a\rangle$. 
+    \textbf{(5) This contradiction verifies our assertion that every subgroup of the form $\langle a\rangle$ is normal in $G$. }
+    To complete the proof, let $x$ be any nonidentity element in $G$ and $y$ be any element of $G$ not in $\langle x\rangle$.
+    \textbf{(6) Then, by comparing orders and using Theorem 9.6, we see that $G=\langle x\rangle\times\langle y\rangle\iso \ZZ_p\oplus\ZZ_p$.}
+    }
+    \bigskip
+    
+    The author left out a lot of the details in the proof (as usual).  Most sentences could use more explanation, but the 6 sentences in bold in particular require more justification. Replace those sentences with the missing details to write a more detailed proof (and add some paragraph spacing to make it more readable).
+    
+    
+\end{enumerate}
+\end{document}
